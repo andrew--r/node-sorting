@@ -22,6 +22,13 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', indexRoute);
 app.use('/result', resultRoute);
 
+// short-circuit annoying favicon request
+app.get('/favicon.ico', function(req, res) {
+	res.statusCode = 200;
+	res.setHeader('Content-Type', 'image/x-icon');
+	res.end();
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
