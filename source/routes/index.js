@@ -4,7 +4,7 @@ var router = express.Router();
 var title = 'Сортировка ваших массивов онлайн, бесплатно и без СМС';
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	res.render('index', {
 		title: title,
 	});

@@ -19,9 +19,9 @@ function cocktailSort(array) {
 		leftSwapped = false;
 		rightSwapped = false;
 
-		for (var i = left; i < (lastIndex - right); i++) {
-			if (array[i] > array[i + 1]) {
-				swap(array, i, i + 1);
+		for (var l = left; l < (lastIndex - right); l++) {
+			if (array[l] > array[l + 1]) {
+				swap(array, l, l + 1);
 				leftSwapped = true;
 			}
 		}
@@ -30,9 +30,9 @@ function cocktailSort(array) {
 			right++;
 		}
 
-		for (var i = lastIndex - right; i >= left; i--) {
-			if (array[i] < array[i -1]) {
-				swap(array, i, i - 1);
+		for (var r = lastIndex - right; r >= left; r--) {
+			if (array[r] < array[r -1]) {
+				swap(array, r, r - 1);
 				rightSwapped = true;
 			}
 		}

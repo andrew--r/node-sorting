@@ -5,14 +5,14 @@ var cocktailSort = require('../sorting');
 var title = 'Сортировка ваших массивов онлайн, бесплатно и без СМС';
 
 /* GET result page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	var input = prepareInput(req.query.input);
 	var inputCopy = input.slice();
 	var output;
 
-	console.time('cocktail sort');
+	console.time('cocktail sort'); // eslint-disable-line no-console
 	output = cocktailSort(inputCopy);
-	console.timeEnd('cocktail sort');
+	console.timeEnd('cocktail sort'); // eslint-disable-line no-console
 
 	res.render('result', {
 		title: title,
